@@ -1,3 +1,20 @@
 .App {
   text-align: center;
 }
+
+.saveFact {
+  color: white;
+  background-color: green;
+  border: none;
+  border-radius: 20px;
+  margin: 5px;
+}
+
+.savedFacts li {
+  list-style: none;
+  padding: 20px;
+}
+
+.error {
+  color: red;
+}
