@@ -4,11 +4,11 @@ function SavedFacts(props) {
   return (
     <div className="savedFacts">
       <h2>Your saved facts</h2>
-      <ul>
-        {props.favouriteFacts.map((fact, index) => (
-          <li key={index}>{fact}</li>
-        ))}
-      </ul>
+      {props.favouriteFacts.map((fact, index) => (
+        <p className="fact" key={index}>
+          {fact}
+        </p>
+      ))}
     </div>
   );
 }

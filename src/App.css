@@ -1,5 +1,32 @@
+body {
+  margin: 0;
+}
+
 .App {
   text-align: center;
+  min-height: 100vh;
+  min-width: 100vw;
+  font-family: "Open Sans", sans-serif;
+}
+
+.row {
+  flex-direction: column;
+  display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.newFact,
+.favouriteFacts {
+  width: 50%;
+}
+
+.fact {
+  padding: 20px;
 }
 
 .saveFact {
@@ -8,11 +35,6 @@
   border: none;
   border-radius: 20px;
   margin: 5px;
-}
-
-.savedFacts li {
-  list-style: none;
-  padding: 20px;
 }
 
 .error {

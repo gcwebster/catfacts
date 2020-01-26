@@ -20,15 +20,30 @@ class App extends React.Component {
 
     return (
       <div className="App">
-        <h1>Cat facts</h1>
-        <Intro />
+        <div className="content">
+          <h1>Cat facts</h1>
+          <Intro />
+          {newFact === "" && (
+            <button onClick={this.getFactFromAPI}>Begin</button>
+          )}
 
-        <button onClick={this.getFactFromAPI}>New catfact</button>
-        {newFact && <CatFact newFact={newFact} saveFact={this.saveFact} />}
-        {favouriteFacts.length !== 0 && error === "" && (
-          <SavedFacts favouriteFacts={favouriteFacts} />
-        )}
-        {error !== "" && <p className="error">{error}</p>}
+          <div className="row">
+            <div className="newFact">
+              {newFact && (
+                <>
+                  <CatFact newFact={newFact} saveFact={this.saveFact} />
+                  <button onClick={this.getFactFromAPI}>New catfact</button>
+                </>
+              )}
+            </div>
+            <div className="favouriteFacts">
+              {favouriteFacts.length !== 0 && error === "" && (
+                <SavedFacts favouriteFacts={favouriteFacts} />
+              )}
+            </div>
+          </div>
+          {error !== "" && <p className="error">{error}</p>}
+        </div>
       </div>
     );
   }
